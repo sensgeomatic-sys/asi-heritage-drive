@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_top"><title>Sens Geomatic</title><style>*{box-sizing:border-box}html,body{margin:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Roboto,sans-serif;color:#2a211c;background:#f6f2ec;font-size:16px;line-height:1.55}
+a{color:#8a3a1f}a:hover{color:#6d2c16}
+.w{max-width:1160px;margin:0 auto;padding:0 22px}
+.k{margin:0 0 6px;color:#b5762a;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+h1,h2,h3{line-height:1.15;margin:0}
+h2{font-size:32px;margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:8px;background:#8a3a1f;color:#fff!important;text-decoration:none;font-weight:700;border:2px solid #8a3a1f}
+.btn:hover{background:#6d2c16;border-color:#6d2c16}
+.btn.gold{background:#b5762a;border-color:#b5762a}.btn.gold:hover{background:#956020}
+.btn.line{background:transparent;border-color:#fff}.btn.line:hover{background:rgba(255,255,255,.12)}
+.card{background:#fff;border:1px solid #e4dbd0;border-radius:12px;padding:22px}
+.muted{color:#6f625a}.body{color:#4b3f37}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{min-height:44px;padding:0 16px;border-radius:999px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;border:1px solid #d6c9bb;background:#fff;color:#2a211c}
+.pill[aria-pressed=true],.pill[aria-selected=true]{background:#8a3a1f;border-color:#8a3a1f;color:#fff}
+.grid{display:grid;gap:18px}
+.dark{background:#2a211c;color:#fff}
+section{padding:64px 0}
+@media(max-width:640px){h2{font-size:26px}section{padding:44px 0}}
+</style><script>(function(){function h(){var x=document.documentElement.scrollHeight;try{parent.postMessage({sensHeight:x},"*");}catch(e){}}addEventListener("load",h);addEventListener("resize",h);setTimeout(h,800);})();</script></head><body><div class="dark"><div class="w" style="padding-top:54px;padding-bottom:54px">
+<p class="k" style="color:#e0b57a">Archaeological Survey of India</p>
+<h1 style="font-size:clamp(30px,4.6vw,44px);margin-bottom:14px">Monuments we have documented</h1>
+<p style="margin:0;font-size:18px;max-width:700px;color:#e9ddd0">We have surveyed and modelled protected monuments for six ASI Circles. Choose a Circle to see the site and the records we created.</p>
+</div></div>
+
+<section><div class="w" style="display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start">
+<nav aria-label="Circles" id="cl" style="flex:1 1 250px;min-width:0;display:flex;flex-direction:column;gap:8px"></nav>
+<div style="flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:18px">
+<article style="background:#fff;border:1px solid #e4dbd0;border-radius:14px;overflow:hidden">
+<div style="padding:24px">
+<div id="mt" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px"></div>
+<h2 id="mn" style="font-size:26px;margin-bottom:4px"></h2>
+<p id="mp" class="muted" style="margin:0 0 12px"></p>
+<p id="mx" class="body" style="margin:0"></p>
+</div></article>
+<div style="background:#faf7f2;border:1px solid #e4dbd0;border-radius:12px;padding:18px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+<span style="flex:999 1 300px">ASI officers can open the full drawings, PDFs and 3D models for their Circle in the Heritage Drive.</span>
+<a class="btn" href="https://app.sensgeomatic.com/" target="_top">Open Heritage Drive</a>
+</div></div>
+</div></section>
+
+<script>
+var D=[
+{c:'Bhubaneswar Circle',w:'Odisha',n:'Nata Mandira, Konark Sun Temple',p:'Konark, Odisha',t:['3D model','Kalinga architecture'],x:'The dancing hall that stands east of the Jagamohana (audience hall). It rises on a 3.6 m high platform reached by four central stairways, with sixteen pillars whose taller central four suggest it once carried a pyramidal roof.'},
+{c:'Kolkata Circle',w:'West Bengal',n:'Jore Bangla Temple',p:'Bishnupur, West Bengal',t:['3D model','Terracotta'],x:'Built in 1655 by the Malla king Raghunath Singha, this twin-roofed temple sits on a high laterite platform and is famous for its finely carved terracotta panels.'},
+{c:'Aurangabad Circle',w:'Maharashtra',n:'Ajanta Cave 1',p:'Ajanta, Maharashtra',t:['Documentation'],x:'A fifth-century Buddhist monastery (vihara) and the first cave visitors reach. A verandah opens into a pillared hall with celebrated wall paintings and a shrine holding a seated, preaching Buddha.'},
+{c:'Jodhpur Circle',w:'Rajasthan',n:'Menal (Minal) Temple',p:'Menal, Rajasthan',t:['Documentation'],x:'Documentation of the temple at Menal for the ASI Jodhpur Circle.'},
+{c:'Vadodara Circle',w:'Gujarat',n:'Sidi Bashir Minar (Jhulta Minar)',p:'Ahmedabad, Gujarat',t:['Documentation'],x:'The famous "shaking minarets": three storeys with carved balconies, where gently shaking one minaret makes the other vibrate a few seconds later.'},
+{c:'Jabalpur Circle',w:'Madhya Pradesh',n:'Madan Mahal (Rani Durgavati) Fort',p:'Jabalpur, Madhya Pradesh',t:['3D model','Gond dynasty'],x:'An 11th-century watchtower fort of the Gond dynasty, linked with Rani Durgavati and her son Madan Mohan, on a rocky hill outside Jabalpur.'}];
+var cl=document.getElementById('cl');
+function show(i){var d=D[i];[].forEach.call(cl.children,function(b,j){var on=j===i;b.setAttribute('aria-pressed',on?'true':'false');b.style.background=on?'#8a3a1f':'#fff';b.style.color=on?'#fff':'#2a211c';b.style.borderColor=on?'#8a3a1f':'#e4dbd0';});
+document.getElementById('mn').textContent=d.n;document.getElementById('mp').textContent=d.p;document.getElementById('mx').textContent=d.x;
+document.getElementById('mt').innerHTML=d.t.map(function(t){return '<span style="padding:3px 10px;border-radius:999px;background:#f4e3d9;color:#8a3a1f;font-size:13px;font-weight:700">'+t+'</span>';}).join('');}
+D.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.style.cssText='display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:52px;padding:0 16px;border-radius:10px;font:inherit;font-size:16px;font-weight:700;text-align:left;cursor:pointer;border:1px solid #e4dbd0';
+b.innerHTML='<span>'+d.c+'</span><small style="font-weight:500">'+d.w+'</small>';b.onclick=function(){show(i);};cl.appendChild(b);});
+show(0);
+</script>
+</body></html>

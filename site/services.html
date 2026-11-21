@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_top"><title>Sens Geomatic</title><style>*{box-sizing:border-box}html,body{margin:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Roboto,sans-serif;color:#2a211c;background:#f6f2ec;font-size:16px;line-height:1.55}
+a{color:#8a3a1f}a:hover{color:#6d2c16}
+.w{max-width:1160px;margin:0 auto;padding:0 22px}
+.k{margin:0 0 6px;color:#b5762a;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+h1,h2,h3{line-height:1.15;margin:0}
+h2{font-size:32px;margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:8px;background:#8a3a1f;color:#fff!important;text-decoration:none;font-weight:700;border:2px solid #8a3a1f}
+.btn:hover{background:#6d2c16;border-color:#6d2c16}
+.btn.gold{background:#b5762a;border-color:#b5762a}.btn.gold:hover{background:#956020}
+.btn.line{background:transparent;border-color:#fff}.btn.line:hover{background:rgba(255,255,255,.12)}
+.card{background:#fff;border:1px solid #e4dbd0;border-radius:12px;padding:22px}
+.muted{color:#6f625a}.body{color:#4b3f37}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{min-height:44px;padding:0 16px;border-radius:999px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;border:1px solid #d6c9bb;background:#fff;color:#2a211c}
+.pill[aria-pressed=true],.pill[aria-selected=true]{background:#8a3a1f;border-color:#8a3a1f;color:#fff}
+.grid{display:grid;gap:18px}
+.dark{background:#2a211c;color:#fff}
+section{padding:64px 0}
+@media(max-width:640px){h2{font-size:26px}section{padding:44px 0}}
+</style><script>(function(){function h(){var x=document.documentElement.scrollHeight;try{parent.postMessage({sensHeight:x},"*");}catch(e){}}addEventListener("load",h);addEventListener("resize",h);setTimeout(h,800);})();</script></head><body><div class="dark"><div class="w" style="padding-top:56px;padding-bottom:56px">
+<p class="k" style="color:#e0b57a">Services</p>
+<h1 style="font-size:clamp(30px,4.6vw,44px);max-width:820px;margin-bottom:14px">Survey-grade data from the air and the ground</h1>
+<p style="margin:0;font-size:18px;max-width:700px;color:#e9ddd0">We combine drones, LiDAR, photogrammetry, thermal and multispectral sensors and GNSS to deliver accurate data, clear documentation and practical results for each client.</p>
+</div></div>
+
+<section><div class="w">
+<h2 style="font-size:26px;margin-bottom:6px">What is your project?</h2>
+<p class="muted" style="margin:0 0 16px">Choose a sector to see the services that fit it.</p>
+<div class="pills" role="group" aria-label="Sectors" id="sec" style="margin-bottom:26px"></div>
+<div class="grid" id="cards" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))"></div>
+</div></section>
+
+<section style="background:#faf7f2;border-top:1px solid #e4dbd0"><div class="w" style="display:flex;flex-wrap:wrap;gap:32px">
+<div style="flex:999 1 460px;min-width:0">
+<h2 style="font-size:28px">Equipment and methods</h2>
+<ul style="margin:0;padding-left:20px;display:grid;gap:6px">
+<li>Survey drones with high-resolution mapping cameras</li>
+<li>Airborne and terrestrial LiDAR scanners</li>
+<li>GNSS receivers for ground control and checkpoints</li>
+<li>Thermal and multispectral sensors</li>
+<li>360° cameras for aerial and ground panoramas</li>
+<li>Photogrammetry, GIS and CAD software for processing and drafting</li>
+</ul></div>
+<div class="card" style="flex:1 1 300px;min-width:0;padding:26px">
+<h2 style="font-size:22px;margin-bottom:8px">Get a quote</h2>
+<p class="body" style="margin:0 0 16px">Send us the location, approximate area and the outputs you need.</p>
+<a class="btn" style="width:100%" href="mailto:info@sensgeomatic.com?subject=Quote%20request" target="_top">Email info@sensgeomatic.com</a>
+</div></div></section>
+
+<script>
+var C=[
+{n:'Aerial mapping',s:['Heritage','Infrastructure','Urban planning','Agriculture'],t:'Drone imagery processed into accurate, geo-referenced maps of large or difficult areas.',g:'Orthomosaics · DEM / DSM · contours · GIS layers'},
+{n:'LiDAR scanning',s:['Heritage','Infrastructure','Forestry & environment'],t:'Millions of laser measurements of terrain, structures and vegetation, even under tree canopy.',g:'Point clouds · terrain models · 3D models · sections'},
+{n:'Topographic & engineering surveys',s:['Infrastructure','Urban planning'],t:'GNSS-controlled surveys for design, planning and land records.',g:'AutoCAD drawings · site and boundary plans · volumes'},
+{n:'Heritage & archaeology',s:['Heritage'],t:'Non-invasive documentation of monuments and sites under ASI and AMASR requirements, from condition surveys to restoration-ready data.',g:'Measured drawings · 3D models · prohibited and regulated area maps'},
+{n:'360° virtual tours',s:['Heritage','Infrastructure','Urban planning'],t:'Explore sites remotely for reviews, monitoring, outreach and marketing.',g:'Interactive 360° tours · aerial panoramas'},
+{n:'Thermal & multispectral',s:['Agriculture','Infrastructure','Forestry & environment'],t:'See crop stress, moisture and heat loss that the eye cannot.',g:'Thermal maps · NDVI crop-health maps · reports'},
+{n:'Aerial photo & video',s:['Urban planning','Heritage'],t:'Professional aerial photography and filming for promotion, progress records and media.',g:'Edited photos and video'},
+{n:'Search & rescue support',s:['Forestry & environment'],t:'Rapid aerial search of large or dangerous areas to support response teams.',g:'Live aerial views · area maps'}];
+var SECT=['All','Heritage','Infrastructure','Urban planning','Agriculture','Forestry & environment'];
+var sec=document.getElementById('sec'),cards=document.getElementById('cards');
+C.forEach(function(c){var a=document.createElement('article');a.className='card';a.style.transition='opacity .2s';
+a.innerHTML='<h3 style="font-size:20px;margin-bottom:8px">'+c.n+'</h3><p class="body" style="margin:0 0 14px">'+c.t+'</p><b class="muted" style="display:block;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Deliverables</b><p style="margin:0;font-size:15px">'+c.g+'</p>';cards.appendChild(a);});
+function pick(s){[].forEach.call(sec.children,function(b){b.setAttribute('aria-pressed',b.textContent===s?'true':'false');});
+C.forEach(function(c,i){var hit=s==='All'||c.s.indexOf(s)>=0,el=cards.children[i];el.style.opacity=hit?'1':'.35';el.style.borderColor=hit&&s!=='All'?'#8a3a1f':'#e4dbd0';});}
+SECT.forEach(function(s){var b=document.createElement('button');b.type='button';b.className='pill';b.textContent=s;b.onclick=function(){pick(s);};sec.appendChild(b);});
+pick('All');
+</script>
+</body></html>

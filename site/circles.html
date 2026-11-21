@@ -27,13 +27,14 @@ section{padding:64px 0}
 <section><div class="w" style="display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start">
 <nav aria-label="Circles" id="cl" style="flex:1 1 250px;min-width:0;display:flex;flex-direction:column;gap:8px"></nav>
 <div style="flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:18px">
-<article style="background:#fff;border:1px solid #e4dbd0;border-radius:14px;overflow:hidden">
+<a id="ma" target="_top" style="display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid #e4dbd0;border-radius:14px;overflow:hidden;cursor:pointer;transition:box-shadow .15s,border-color .15s" onmouseover="this.style.borderColor='#8a3a1f';this.style.boxShadow='0 6px 18px rgba(138,58,31,.15)'" onmouseout="this.style.borderColor='#e4dbd0';this.style.boxShadow='none'">
 <div style="padding:24px">
 <div id="mt" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px"></div>
 <h2 id="mn" style="font-size:26px;margin-bottom:4px"></h2>
 <p id="mp" class="muted" style="margin:0 0 12px"></p>
-<p id="mx" class="body" style="margin:0"></p>
-</div></article>
+<p id="mx" class="body" style="margin:0 0 16px"></p>
+<span class="btn" id="mb" style="pointer-events:none">View 3D model &amp; records &rarr;</span>
+</div></a>
 <div style="background:#faf7f2;border:1px solid #e4dbd0;border-radius:12px;padding:18px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">
 <span style="flex:999 1 300px">ASI officers can open the full drawings, PDFs and 3D models for their Circle in the Heritage Drive.</span>
 <a class="btn" href="https://app.sensgeomatic.com/" target="_top">Open Heritage Drive</a>
@@ -42,15 +43,15 @@ section{padding:64px 0}
 
 <script>
 var D=[
-{c:'Bhubaneswar Circle',w:'Odisha',n:'Nata Mandira, Konark Sun Temple',p:'Konark, Odisha',t:['3D model','Kalinga architecture'],x:'The dancing hall that stands east of the Jagamohana (audience hall). It rises on a 3.6 m high platform reached by four central stairways, with sixteen pillars whose taller central four suggest it once carried a pyramidal roof.'},
-{c:'Kolkata Circle',w:'West Bengal',n:'Jore Bangla Temple',p:'Bishnupur, West Bengal',t:['3D model','Terracotta'],x:'Built in 1655 by the Malla king Raghunath Singha, this twin-roofed temple sits on a high laterite platform and is famous for its finely carved terracotta panels.'},
-{c:'Aurangabad Circle',w:'Maharashtra',n:'Ajanta Cave 1',p:'Ajanta, Maharashtra',t:['Documentation'],x:'A fifth-century Buddhist monastery (vihara) and the first cave visitors reach. A verandah opens into a pillared hall with celebrated wall paintings and a shrine holding a seated, preaching Buddha.'},
-{c:'Jodhpur Circle',w:'Rajasthan',n:'Menal (Minal) Temple',p:'Menal, Rajasthan',t:['Documentation'],x:'Documentation of the temple at Menal for the ASI Jodhpur Circle.'},
-{c:'Vadodara Circle',w:'Gujarat',n:'Sidi Bashir Minar (Jhulta Minar)',p:'Ahmedabad, Gujarat',t:['Documentation'],x:'The famous "shaking minarets": three storeys with carved balconies, where gently shaking one minaret makes the other vibrate a few seconds later.'},
-{c:'Jabalpur Circle',w:'Madhya Pradesh',n:'Madan Mahal (Rani Durgavati) Fort',p:'Jabalpur, Madhya Pradesh',t:['3D model','Gond dynasty'],x:'An 11th-century watchtower fort of the Gond dynasty, linked with Rani Durgavati and her son Madan Mohan, on a rocky hill outside Jabalpur.'}];
+{u:'https://www.sensgeomatic.com/bubnashwarcircle',c:'Bhubaneswar Circle',w:'Odisha',n:'Nata Mandira, Konark Sun Temple',p:'Konark, Odisha',t:['3D model','Kalinga architecture'],x:'The dancing hall that stands east of the Jagamohana (audience hall). It rises on a 3.6 m high platform reached by four central stairways, with sixteen pillars whose taller central four suggest it once carried a pyramidal roof.'},
+{u:'https://www.sensgeomatic.com/kolkotacircle',c:'Kolkata Circle',w:'West Bengal',n:'Jore Bangla Temple',p:'Bishnupur, West Bengal',t:['3D model','Terracotta'],x:'Built in 1655 by the Malla king Raghunath Singha, this twin-roofed temple sits on a high laterite platform and is famous for its finely carved terracotta panels.'},
+{u:'https://www.sensgeomatic.com/aurangabadcircle',c:'Aurangabad Circle',w:'Maharashtra',n:'Ajanta Cave 1',p:'Ajanta, Maharashtra',t:['Documentation'],x:'A fifth-century Buddhist monastery (vihara) and the first cave visitors reach. A verandah opens into a pillared hall with celebrated wall paintings and a shrine holding a seated, preaching Buddha.'},
+{u:'https://www.sensgeomatic.com/jodhpurcircle',c:'Jodhpur Circle',w:'Rajasthan',n:'Menal (Minal) Temple',p:'Menal, Rajasthan',t:['Documentation'],x:'Documentation of the temple at Menal for the ASI Jodhpur Circle.'},
+{u:'https://www.sensgeomatic.com/vadodracircle',c:'Vadodara Circle',w:'Gujarat',n:'Sidi Bashir Minar (Jhulta Minar)',p:'Ahmedabad, Gujarat',t:['Documentation'],x:'The famous "shaking minarets": three storeys with carved balconies, where gently shaking one minaret makes the other vibrate a few seconds later.'},
+{u:'https://www.sensgeomatic.com/jabalpur',c:'Jabalpur Circle',w:'Madhya Pradesh',n:'Madan Mahal (Rani Durgavati) Fort',p:'Jabalpur, Madhya Pradesh',t:['3D model','Gond dynasty'],x:'An 11th-century watchtower fort of the Gond dynasty, linked with Rani Durgavati and her son Madan Mohan, on a rocky hill outside Jabalpur.'}];
 var cl=document.getElementById('cl');
 function show(i){var d=D[i];[].forEach.call(cl.children,function(b,j){var on=j===i;b.setAttribute('aria-pressed',on?'true':'false');b.style.background=on?'#8a3a1f':'#fff';b.style.color=on?'#fff':'#2a211c';b.style.borderColor=on?'#8a3a1f':'#e4dbd0';});
-document.getElementById('mn').textContent=d.n;document.getElementById('mp').textContent=d.p;document.getElementById('mx').textContent=d.x;
+document.getElementById('ma').href=d.u;document.getElementById('mb').innerHTML='Open '+d.c+' 3D page &rarr;';document.getElementById('mn').textContent=d.n;document.getElementById('mp').textContent=d.p;document.getElementById('mx').textContent=d.x;
 document.getElementById('mt').innerHTML=d.t.map(function(t){return '<span style="padding:3px 10px;border-radius:999px;background:#f4e3d9;color:#8a3a1f;font-size:13px;font-weight:700">'+t+'</span>';}).join('');}
 D.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.style.cssText='display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:52px;padding:0 16px;border-radius:10px;font:inherit;font-size:16px;font-weight:700;text-align:left;cursor:pointer;border:1px solid #e4dbd0';
 b.innerHTML='<span>'+d.c+'</span><small style="font-weight:500">'+d.w+'</small>';b.onclick=function(){show(i);};cl.appendChild(b);});
